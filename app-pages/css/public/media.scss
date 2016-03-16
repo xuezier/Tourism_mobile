@@ -18,12 +18,14 @@ body {
     width: 100%;
     box-sizing: border-box;
     background-color: #3f51b5;
-    @include comic(0);
+    @include comic(0.5);
+    opacity: 1;
     z-index: 100;
     &.focus {
+        opacity: .3;
         .bg {
-            transform: translate3d(0, -130px, 0);
-            -webkit-transform: translate3d(0, -130px, 0);
+            transform: translate3d(0, -180px, 0);
+            -webkit-transform: translate3d(0, -180px, 0);
             .fill {
                 background-color: rgba(#3f51b5, 1);
             }
@@ -75,11 +77,16 @@ body {
             height: 100%;
             overflow: hidden;
             box-sizing: border-box;
-            padding-top: 70px;
+            // padding-top: 70px;
             transform: translate3d(0px, 100%, 0px);
             -webkit-transform: translate3d(0px, 100%, 0px);
             transition: transform .5s ease-out;
             -webkit-transition: -webkit-transform .5s ease-out;
+            div {
+                // background-size: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
             &.page1 {
                 padding-top: 200px;
                 div {
