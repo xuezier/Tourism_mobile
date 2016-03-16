@@ -1,0 +1,104 @@
+@import"../openscss/color";
+@import"../openscss/model";
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+}
+
+._top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #3f51b5;
+    @include comic(0);
+    z-index: 100;
+    &.focus {
+        .bg {
+            transform: translate3d(0, -130px, 0);
+            -webkit-transform: translate3d(0, -130px, 0);
+            .fill {
+                background-color: rgba(#3f51b5, 1);
+            }
+        }
+    }
+    .bg {
+        width: 100%;
+        height: 180px;
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+        background-size: 100%;
+        background-color: #3f51b5;
+        background-image: url("/images/topbg01.jpg");
+        @include comic(0.5);
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        .fill {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(#3f51b5, .3);
+            @include comic(.5);
+        }
+    }
+    .box {
+        height: 50px;
+        position: relative;
+        left: 0;
+        top: 0;
+        color: #FFF;
+    }
+}
+
+.body {
+    // z-index: 10;
+    // position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    .pages {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+            padding-top: 70px;
+            transform: translate3d(0px, 100%, 0px);
+            -webkit-transform: translate3d(0px, 100%, 0px);
+            transition: transform .5s ease-out;
+            -webkit-transition: -webkit-transform .5s ease-out;
+            &.page1 {
+                padding-top: 200px;
+                div {
+                    height: 100%;
+                    background-color: red;
+                }
+            }
+            &.page2 {
+                div {
+                    height: 100%;
+                    background-color: green;
+                }
+            }
+            &.page3 {
+                div {
+                    height: 100%;
+                    background-color: black;
+                }
+            }
+        }
+    }
+}
